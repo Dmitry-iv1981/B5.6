@@ -1,0 +1,42 @@
+a = {'00':'-','01':'-','02':'-','10':'-','11':'-','12':'-','20':'-','21':'-','22':'-'}
+
+def game():
+        print("",'',"0","1",2)
+        print(f"0 {a['00']} {a['01']} {a['02']}")
+        print(f"1 {a['10']} {a['11']} {a['12']}")
+        print(f"2 {a['20']} {a['21']} {a['22']}")
+        pass
+game()
+for values in a:
+    if '-' in a.values():
+        b = input("ход 'x':")
+        if b in a and a[b] =='-':
+            a[b] = 'x'
+            game()
+        elif b in a and a[b] != '-':
+            print("ход занят, сделайте новый")
+            continue
+        else:
+            print("такого хода не существует,сделайте новый ")
+            continue
+        if a['00'] == 'x' and a['01'] == 'x' and a['02'] == 'x' or a['10'] == 'x' and a['11'] == 'x' and a['12'] == 'x' or a['20'] == 'x' and a['21'] == 'x' and a['22'] == 'x' or a['00'] == 'x' and a['10'] == 'x' and a['20'] == 'x' or a['01'] == 'x' and a['11'] == 'x' and a['21'] == 'x' or a['02'] == 'x' and a['12'] == 'x' and a['22'] == 'x' or a['00'] == 'x' and a['11'] == 'x' and a['22'] == 'x' or a['02'] == 'x' and a['11'] == 'x' and a['20'] == 'x':
+            print("победил х")
+            break
+        if '-' in a.values():
+            c = input("ход 'o':")
+            if c in a and a[c] == '-':
+                a[c] = 'o'
+                game()
+            elif c in a and a[c] != '-':
+                print("ход занят, сделайте новый")
+                continue
+            else:
+                print("такого хода не существует,сделайте новый ")
+                continue
+            if a['00'] == 'o' and a['01'] == 'o' and a['02'] == 'o' or a['10'] == 'o' and a['11'] == 'o' and a['12'] == 'o' or a['20'] == 'o' and a['21'] == 'o' and a['22'] == 'o' or a['00'] == 'o' and a['10'] == 'o' and a['20'] == 'o' or a['01'] == 'o' and a['11'] == 'o' and a['21'] == 'o' or a['02'] == 'o' and a['12'] == 'o' and a['22'] == 'o' or a['00'] == 'o' and a['11'] == 'o' and a['22'] == 'o' or a['02'] == 'o' and a['11'] == 'o' and a['20'] == 'o':
+                print("победил o")
+                break
+
+    else:
+        print("ничья")
+        break
